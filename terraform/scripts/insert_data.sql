@@ -1,0 +1,16 @@
+INSERT INTO facultad (facul_nombre, decano, numero_estuiantes) VALUES
+('Ciencias',      'Ana María López', 1200),
+('Ingeniería',    'Carlos Ramírez', 3400),
+('Medicina',      'Laura Gómez', 900),
+('Derecho',       'Andrés Martínez', 1500),
+('Economía',      'Mariana Paredes', 800),
+('Arquitectura',  'Felipe Duarte', 600),
+('Psicología',    'Silvia Rojas', 1100),
+('Filosofía',     'Mateo Vargas', 200),
+('Educación',     'Patricia Salazar', 1300),
+('Artes',         'Daniel Peña', 450),
+('Agronomía',     'Luis Torres', 700),
+('Veterinaria',   'Carmen Ruiz', 320),
+('Matemáticas',   'José Álvarez', 400),
+('Física',        'Elena Bernal', 350),
+('Química',       'Raúl Mendoza', 380);
