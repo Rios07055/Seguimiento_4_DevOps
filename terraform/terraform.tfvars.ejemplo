@@ -1,0 +1,18 @@
+gcp_project_id = "primal-fulcrum-475820-s6"
+gcp_region     = "us-central1"
+gcp_zone       = "us-central1-a"
+
+artifact_repo_location = "us-central1"
+artifact_repo_name     = "seguimiento-artifacts-facultad"
+
+app_service_name = "facultad-service"
+container_image  = "us-central1-docker.pkg.dev/seguimiento-gcp-demo-789/seguimiento-artifacts-facultad/seguimiento-facultad:1.0.0"
+
+sql_instance_name = "seguimiento-postgres"
+sql_db_name       = "seguimiento_db"
+sql_db_user       = "facultad_user"
+sql_db_password   = "jB)y5U8rC96%"
+
+storage_bucket_name = "seguimiento-storage-facultad"
+
+enable_public_invoker = true

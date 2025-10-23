@@ -1,0 +1,34 @@
+substitutions:
+  _LOCATION: "us-central1"
+  _REPO: "seguimiento-artifacts-facultad"
+  _IMAGE_NAME: "seguimiento-facultad"
+
+images:
+  - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:${SHORT_SHA}'
+  - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:latest'
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Build image'
+    args: [
+      'build',
+      '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:${SHORT_SHA}',
+      '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:latest',
+      '.'
+    ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Push image'
+    args: [
+      'push',
+      '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:${SHORT_SHA}'
+    ]
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'Push latest tag'
+    args: [
+      'push',
+      '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_IMAGE_NAME}:latest'
+    ]
+
+timeout: '1200s'
